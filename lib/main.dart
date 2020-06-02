@@ -1,37 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'input_page.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   return runApp(MaterialApp(
-    theme: ThemeData(
+    theme: ThemeData.dark().copyWith(
       primaryColor: Color(0xFF0A0E21),
       scaffoldBackgroundColor: Color(0xFF0A0E21),
-      accentColor: Colors.purple
     ),
-      home: Scaffold(
-    appBar: AppBar(
-      title: Center(
-        child: Text(
-          "BMI Calculator",
-
-        ),
-      ),
-    ),
-  )));
+    home:InputPage(),
+  ),);
 }
 
-class BmiApp extends StatefulWidget {
-  @override
-  _BmiAppState createState() => _BmiAppState();
-}
 
-class _BmiAppState extends State<BmiApp> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-
-      ),
-    );
-  }
-}
