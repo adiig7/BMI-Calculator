@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'resource_card.dart';
+import 'icon.dart';
 
 const Color activatedCardColor = Color(0xFF1D1E33);
 const Color deactivatedCardColor = Color(0xFF111328);
@@ -109,59 +111,7 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class IconContent extends StatelessWidget {
 
-  IconContent({@required this.icon,@required this.label});
 
-  final String label;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Icon(
-          icon,
-          color: Colors.white,
-          size: 80.0,
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          label,
-          style: TextStyle(
-            color: Color(0xFF8D8E9800),
-            fontSize: 18.0
-          ),
-        )
-      ],
-    );
-  }
-}
-
-class Reusable_Card extends StatelessWidget {
-
-  Reusable_Card({this.colour, this.cardChild,this.onPress});
-  final Color colour;
-  final Widget cardChild;
-  final Function onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPress,
-      child: Container(
-        child: cardChild,
-        margin: EdgeInsets.all(15.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          color: colour,
-        ),
-      ),
-    );
-  }
-}
 
 
