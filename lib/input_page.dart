@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -56,33 +54,29 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
-                    onTap:(){
+                  child: Reusable_Card(
+                    onPress: (){
                       setState(() {
                         selectedGender = Gender.male;
                       });
                     },
-                    child: Reusable_Card(
-                      colour: selectedGender == Gender.male ? activatedCardColor : deactivatedCardColor,
-                      cardChild: IconContent(
-                          icon: FontAwesomeIcons.mars,
-                          label: "MALE"),
-                    ),
+                    colour: selectedGender == Gender.male ? activatedCardColor : deactivatedCardColor,
+                    cardChild: IconContent(
+                        icon: FontAwesomeIcons.mars,
+                        label: "MALE"),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap:(){
+                  child: Reusable_Card(
+                    onPress: (){
                       setState(() {
                         selectedGender = Gender.female;
                       });
                     },
-                    child: Reusable_Card(
-                      colour: selectedGender == Gender.female ? activatedCardColor : deactivatedCardColor,
-                      cardChild: IconContent(
-                      icon: FontAwesomeIcons.venus,
-                      label: "FEMALE"),
-                    ),
+                    colour: selectedGender == Gender.female ? activatedCardColor : deactivatedCardColor,
+                    cardChild: IconContent(
+                    icon: FontAwesomeIcons.venus,
+                    label: "FEMALE"),
                   ),
                 )
               ],
@@ -149,18 +143,22 @@ class IconContent extends StatelessWidget {
 
 class Reusable_Card extends StatelessWidget {
 
-  Reusable_Card({this.colour, this.cardChild});
+  Reusable_Card({this.colour, this.cardChild,this.onPress});
   final Color colour;
   final Widget cardChild;
+  final Function onPress;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        color: colour,
+    return GestureDetector(
+      onTap: onPress,
+      child: Container(
+        child: cardChild,
+        margin: EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          color: colour,
+        ),
       ),
     );
   }
