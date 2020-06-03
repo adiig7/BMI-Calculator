@@ -16,32 +16,7 @@ enum Gender{
 class _InputPageState extends State<InputPage> {
 
   Gender selectedGender;
-//
-//  Color maleCardColor = deactivatedCardColor;
-//  Color femaleCardColor = activatedCardColor;
-//
-//  void updateColor(Gender gender) {
-//    if (gender == Gender.male){
-//      if (maleCardColor == deactivatedCardColor) {
-//        maleCardColor = activatedCardColor;
-//        femaleCardColor = deactivatedCardColor;
-//      }
-//      else {
-//        maleCardColor = deactivatedCardColor;
-//        femaleCardColor = activatedCardColor;
-//      }
-//  }
-//    if(gender==Gender.female){
-//  if(femaleCardColor == deactivatedCardColor){
-//  femaleCardColor = activatedCardColor;
-//  maleCardColor = deactivatedCardColor;
-//  }
-//  else{
-//  femaleCardColor = deactivatedCardColor;
-//  maleCardColor = activatedCardColor;
-//  }
-//  }
-//  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,6 +62,12 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Reusable_Card(
               colour: activatedCardColor,
+              cardChild: Column(
+                children: <Widget>[
+                  Text("HEIGHT")
+                ],
+              ),
+
             ),
           ),
           Expanded(
