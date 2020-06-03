@@ -37,7 +37,7 @@ class _InputPageState extends State<InputPage> {
                         selectedGender = Gender.male;
                       });
                     },
-                    colour: selectedGender == Gender.male ? activatedCardColor : deactivatedCardColor,
+                    colour: selectedGender == Gender.male ? kactivatedCardColor : kdeactivatedCardColor,
                     cardChild: IconContent(
                         icon: FontAwesomeIcons.mars,
                         label: "MALE"),
@@ -50,7 +50,7 @@ class _InputPageState extends State<InputPage> {
                         selectedGender = Gender.female;
                       });
                     },
-                    colour: selectedGender == Gender.female ? activatedCardColor : deactivatedCardColor,
+                    colour: selectedGender == Gender.female ? kactivatedCardColor : kdeactivatedCardColor,
                     cardChild: IconContent(
                     icon: FontAwesomeIcons.venus,
                     label: "FEMALE"),
@@ -61,13 +61,21 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: Reusable_Card(
-              colour: activatedCardColor,
+              colour: kactivatedCardColor,
               cardChild: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Text("HEIGHT",
-                  style: labelTextStyle,
+                  style: klabelTextStyle,
                   ),
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        "180",
+                        style: knumberTextStyle,
+                      )
+                    ],
+                  )
                 ],
               ),
 
@@ -78,12 +86,12 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: Reusable_Card(
-                    colour: activatedCardColor,
+                    colour: kactivatedCardColor,
                   ),
                 ),
                 Expanded(
                   child: Reusable_Card(
-                    colour: activatedCardColor,
+                    colour: kactivatedCardColor,
                   ),
                 )
               ],
