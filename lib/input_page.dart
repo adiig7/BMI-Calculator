@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'resource_card.dart';
 import 'icon.dart';
+import 'constants.dart';
 
-const Color activatedCardColor = Color(0xFF1D1E33);
-const Color deactivatedCardColor = Color(0xFF111328);
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -63,8 +63,11 @@ class _InputPageState extends State<InputPage> {
             child: Reusable_Card(
               colour: activatedCardColor,
               cardChild: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Text("HEIGHT")
+                  Text("HEIGHT",
+                  style: labelTextStyle,
+                  ),
                 ],
               ),
 
