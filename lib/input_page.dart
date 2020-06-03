@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -16,6 +18,7 @@ enum Gender{
 class _InputPageState extends State<InputPage> {
 
   Gender selectedGender;
+  int height=180;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +29,7 @@ class _InputPageState extends State<InputPage> {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
             child: Row(
@@ -63,18 +67,36 @@ class _InputPageState extends State<InputPage> {
             child: Reusable_Card(
               colour: kactivatedCardColor,
               cardChild: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.center,
+
                 children: <Widget>[
                   Text("HEIGHT",
                   style: klabelTextStyle,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
                     children: <Widget>[
                       Text(
-                        "180",
+                        height.toString(),
                         style: knumberTextStyle,
+                      ),
+                      Text(
+                        "cm",
+                        style: klabelTextStyle,
                       )
                     ],
+                  ),
+                  Slider(
+                    value: height.toDouble(),
+                    min: 120,
+                    max: 240,
+                    activeColor: Color(0xFFEB1555),
+                    inactiveColor: Color(0xFF8D8E98),
+                    onChanged: (double newValue) {
+                      print(newValue);
+                    },
                   )
                 ],
               ),
