@@ -1,3 +1,5 @@
+import 'package:bmicalculator/bottom_button.dart';
+import 'package:bmicalculator/input_page.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'resource_card.dart';
@@ -41,11 +43,14 @@ class ResultsPage extends StatelessWidget {
                     "Your BMI Index is quite low. You need to eat more.",
                     style: kBodyTextStyle,
                     textAlign: TextAlign.center,
-                  )
+                  ),
                 ],
               ),
             ),
-          )
+          ),
+          BottomButton(buttonTitle: "RE-CALCULATE", onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => InputPage(),),);
+          },)
         ],
       ),
     );
