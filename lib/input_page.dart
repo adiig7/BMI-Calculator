@@ -9,15 +9,17 @@ import 'icon.dart';
 import 'constants.dart';
 import 'package:bmicalculator/RoundIconButton.dart';
 import 'results_page.dart';
+import 'calculator_brain.dart';
 
+enum Gender{
+  male,female
+}
 
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
-enum Gender{
-  male,female
-}
+
 class _InputPageState extends State<InputPage> {
 
   Gender selectedGender;
@@ -205,9 +207,17 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           BottomButton(buttonTitle: "CALCULATE",onTap: (){
-            Navigator.push(context, MaterialPageRoute( builder: (context){
-              return ResultsPage();
-            },),);
+
+  CalculatorBrain calc = CalculatorBrain(height : height, weight:weight);
+  Navigator.push(context, MaterialPageRoute( builder: (context){
+    return ResultsPage(
+      bmiResult: calc.calculateBMI(),
+      bmiText: calc.getResults(),
+      interpretation: calc.getInterpretation(),
+    );
+  },),);
+
+
           },),
 
         ],
