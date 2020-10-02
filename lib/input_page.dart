@@ -23,15 +23,15 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
 
   Gender selectedGender;
-  int height=180;
-  int weight = 60;
-  int age = 19;
+  int height=170;
+  int weight = 50;
+  int age = 18;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("BMI Calculator"),
+        title: Text("BMI CALCULATOR"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -49,7 +49,7 @@ class _InputPageState extends State<InputPage> {
                     colour: selectedGender == Gender.male ? kactivatedCardColor : kdeactivatedCardColor,
                     cardChild: IconContent(
                         icon: FontAwesomeIcons.mars,
-                        label: "MALE"),
+                        label: "Male"),
                   ),
                 ),
                 Expanded(
@@ -227,7 +227,7 @@ class _InputPageState extends State<InputPage> {
 }
 
 
-
+//changes made in sizes
 
 
 
